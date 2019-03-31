@@ -1,0 +1,33 @@
+{% extends 'partials/_master.twig' %}
+
+{% block main %}
+
+{% if record is defined %}
+	<div class="clearfix">
+		{% if record.banner != "" %}
+			<div class="banner" style="background-image: url({{record.image|image}})">
+				<h2>{{ record.values.banner.title }}</h2>
+			</div>
+		{% endif %}
+
+		{# content #}
+		<div class="container flex">
+			{# submenu #}
+			{% if record.taxonomy is not null %}
+				<div class="pagenav clearfix">
+					{% for item in record.taxonomy.categorie %}
+						{{ menu(item, template = 'partials/_sub_menu_alternative.twig') }}
+					{% endfor %}
+				</div>
+			{% endif %}
+
+			<div class="content section">	
+
+				{# body #}
+				{{ record.body }}
+			</div>
+		</div>
+	</div>
+{% endif %}
+
+{% endblock main %}

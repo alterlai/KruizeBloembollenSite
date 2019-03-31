@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="{{ htmllang() }}">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+        {# make sure we always display a proper title: The record's title if there is one, appended with the
+           sitename. If there is no title, we append the sitename with the payoff, if there is one. #}
+        <title>
+            {%- if record.title is defined %}{{ record.title|striptags }} | {% endif -%}
+                {{ config.get('general/sitename') -}}
+            {% if record.title is not defined and config.get('general/payoff') %} | {{ config.get('general/payoff') }}{% endif -%}
+        </title>
+        
+        <!-- css -->
+        <link rel="stylesheet" href="{{asset('css/hc-offcanvas-nav.css', 'theme') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css', 'theme') }}">
+        <link rel="stylesheet" href="{{ asset('css/style.css', 'theme') }}">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+                
+        <!-- Favicon -->
+
+
+        <!-- scripts -->
+        <script type="text/javascript" src="{{ asset('js/jquery.min.js', 'theme') }}"></script>
+        <script src="{{ asset('js/bootstrap.min.js', 'theme') }}"></script>
+        
+        <script type="text/javascript" src="{{ asset('js/script.js', 'theme') }}"></script>
+        <script src="https://unpkg.com/ionicons@4.2.2/dist/ionicons.js"></script>
+        <script src="{{asset('js/hc-offcanvas-nav.js', 'theme') }}"></script>
+        
+
+    </head>
+    <body>
+        {% block body %}
+
+            {# include('partials/_header.twig') #}
+            
+            {{ include('partials/_navbar.twig') }}
+            
+            {{ widgets('main_top') }}
+            
+            <totop><ion-icon name="arrow-round-up"></ion-icon></totop>
+            {% block main %}
+            {% endblock main %}
+        {% endblock body %}
+
+        {# {{ include('partials/_footer.twig') }} #}
+
+    </body>
+    <script>
+        $(document).ready(function() {
+            $('.mobile-nav').hcOffcanvasNav({
+                position: 'right',
+                maxWidth: 768,
+                labelClose: "Sluiten",
+                labelBack: "Terug"
+            });
+        });
+    </script>
+</html>

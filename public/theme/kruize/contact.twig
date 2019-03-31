@@ -1,0 +1,65 @@
+{% extends 'partials/_master.twig' %}
+
+{% block main %}
+
+{% if record is defined %}
+	<div class="clearfix">
+		{% if record.banner != "" %}
+			<div class="banner" style="background-image: url({{record.image|image}})">
+				<h2>{{ record.values.banner.title }}</h2>
+			</div>
+		{% endif %}
+
+		{# content #}
+		<div class="container">
+			{# submenu #}
+			{% if record.taxonomy is not null %}
+				<div class="pagenav clearfix">
+					{% for item in record.taxonomy.categorie %}
+						{{ menu(item, template = 'partials/_sub_menu.twig') }}
+					{% endfor %}
+				</div>
+			{% endif %}
+
+			<div class="content section">	
+
+				{# body #}
+				<div class="contact-info">
+					<div>
+						<div class="wrapper">
+							<div class="contact-icon">
+								<i class="fas fa-phone"></i>
+							</div>
+						</div>
+						{{ record.telefoon }}
+					</div>
+						
+					<div>
+						<div class="wrapper">
+							<div class="contact-icon">
+								<i class="fas fa-map-marker-alt"></i>
+							</div>
+						</div>
+						{{ record.adres }}
+					</div>
+
+					<div>
+						<div class="wrapper">
+							<div class="contact-icon">
+								<i class="fas fa-envelope"></i>
+							</div>
+						</div>
+						{{ record.mail }}
+					</div>
+				</div>
+			</div>
+		</div>
+			<div class="content section maps">
+				<iframe frameborder="0" style="border:0"
+src="https://www.google.com/maps/embed/v1/place?q=Vechtstraat%2062&key=AIzaSyAualyZL6RIqgvzpFpnpVXaNpyVI-gaJ94 " allowfullscreen></iframe> 
+			</div>
+		</div>
+	</div>
+{% endif %}
+
+{% endblock main %}

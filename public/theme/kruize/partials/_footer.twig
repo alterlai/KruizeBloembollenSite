@@ -1,0 +1,32 @@
+{% setcontent contact = "block/footer-contact" %}
+
+<!-- Footer -->
+<footer>
+	<div class="container">
+		<div class="footer_box">
+			<img src="{{ asset('logo.png', 'files') }}" alt="logo">
+			<h4>Contact</h4>
+			{# {{ contact.content }} #}
+		</div>
+
+		<div class="footer_box">
+			<h4>Navigatie</h4>
+			{{menu('main', 'partials/_menu_simple.twig')}}
+		</div>
+
+		<div class="footer_box">
+			<h4>Sitemap</h4>
+			<ul>
+				<li>
+					<a href="/sitemap.xml">Sitemap</a>
+				</li>
+			<li>
+				<span>Copyright {{"now"|date("Y")}} KEJ</span>
+			</li>
+		</ul>
+		</div>
+	</div>
+	<div class="credits">
+		<span>This site was created by <a href="https://desoro.nl/">Desoro</a></span>
+	</div>
+</footer>

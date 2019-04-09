@@ -1,0 +1,44 @@
+{% extends 'partials/_master.twig' %}
+
+{% block main %}
+
+        {# This template is used for 'listings': Generic pages that list a number of
+           records from a certain contenttype. These records are available as an array
+           called 'records'. In the for-loop below, we iterate over the records that
+           are on this page. It can be used for overview pages like 'all entries', or
+           'all records tagged with kittens'. #}
+
+        <div class="bol-listings container">
+            {% for record in records %}
+                <div class="item">
+
+                    {% if record.image!="" %}
+                        <div class="img-wrapper">
+                            <a href="{{ record.link }}">
+                                <img src="{{ thumbnail(record.image, 300, 400) }}">
+                            </a>
+                        </div>
+                    {% endif %}
+                    <div class="item-content">
+                        <h2><a href="{{ record.link }}">{{ record.title }}</a></h2>
+                    </div>
+                </div>
+
+            {% else %}
+                <article>
+
+                    <h2>{{ __('general.phrase.no-content-found') }}</h2>
+
+                    <p>
+                        {{ __("Unfortunately, no content could be found. Try another page, or go to the <a href=\"%paths_root%\">homepage</a>.", {'%paths_root%': path('homepage')} ) }}
+                    </p>
+
+                </article>
+            {% endfor %}
+        </div>
+        
+
+        {# If there are more records than will fit on one page, the pager is shown. #}
+        {{ pager(template = 'partials/_sub_pager.twig') }}
+
+{% endblock main %}

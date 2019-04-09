@@ -42,8 +42,10 @@
             {{ widgets('main_top') }}
             
             <totop><ion-icon name="arrow-round-up"></ion-icon></totop>
-            {% block main %}
-            {% endblock main %}
+            <div class="clearfix">
+                {% block main %}
+                {% endblock main %}
+            </div>
         {% endblock body %}
 
         {# {{ include('partials/_footer.twig') }} #}

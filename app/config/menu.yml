@@ -6,12 +6,14 @@ main:
       path: homepage
       class: first
     - label: Over ons
-      path: pages/over-ons
+      path: over-ons
       submenu:
           - label: Historie
             path: historie
           - label: Heden
             path: heden
+    - label: Assortiment
+      path: assortiment
     - label: Teelt
       path: teelt
     - label: Broei

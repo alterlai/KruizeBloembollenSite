@@ -17,6 +17,14 @@ homepage:
     defaults:
         _controller: controller.frontend:homepage
 
+contentlisting:
+    path: /{contenttypeslug}
+    defaults:
+        _controller: controller.frontend:listing
+    requirements:
+        contenttypeslug: controller.requirement:pluralContentTypes
+
+
 page:
     path: /{slug}
     defaults:
@@ -51,12 +59,6 @@ taxonomylink:
     requirements:
         taxonomytype: controller.requirement:anyTaxonomyType
 
-contentlisting:
-    path: /{contenttypeslug}
-    defaults:
-        _controller: controller.frontend:listing
-    requirements:
-        contenttypeslug: controller.requirement:pluralContentTypes
 
 # ------------------------------------------------------------------------------
 # Place your own routes here, that have a LOWER priority than the default routes.

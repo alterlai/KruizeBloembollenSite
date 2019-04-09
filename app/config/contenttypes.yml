@@ -74,37 +74,26 @@ pages:
 # The 'sort' is set to '-datepublish', which means that newer entries will be
 # shown above older entries.
 
-bollen:
-    name: Bollen
+assortiment:
+    name: Assortiment
     singular_name: Bol
     fields:
         title:
             type: text
-            class: large
+            label: Naam
             group: content
         slug:
-            type: slug
-            uses: title
-        teaser:
-            type: html
-            height: 150px
-        body:
-            type: html
-            height: 300px
+          type: slug
+          uses: title
         image:
             type: image
-            group: media
-            placeholder: https://source.unsplash.com/1280x768/?business,workspace,interior/__random__
-        video:
-            type: video
-    relations:
-        pages:
-          multiple: false
-          order: title
-          label: Select a page
+            label: Hoofdafbeelding
+        gallery:
+            type: imagelist
+            label: afbeeldingen
     taxonomy: [ categories, tags ]
-    record_template: entry.twig
-    listing_template: listing.twig
+    record_template: bol.twig
+    listing_template: bollen.twig
     listing_records: 10
     default_status: published
     sort: -datepublish

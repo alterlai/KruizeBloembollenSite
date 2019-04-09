@@ -52,13 +52,15 @@ pages:
             uses: title
         image:
             type: image
-            placeholder: https://source.unsplash.com/1280x768/?business,workplace/__random__
         body:
             type: html
             height: 300px
         template:
             type: templateselect
             filter: '*.twig'
+        gallery:
+            type: imagelist
+            label: Gallerij       
     taxonomy: [ groups ]
     recordsperpage: 20
 

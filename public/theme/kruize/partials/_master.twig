@@ -17,6 +17,7 @@
         <link rel="stylesheet" href="{{asset('css/hc-offcanvas-nav.css', 'theme') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css', 'theme') }}">
         <link rel="stylesheet" href="{{ asset('css/style.css', 'theme') }}">
+        <link rel="stylesheet" href="{{ asset('css/simpleLightbox.min.css', 'theme') }}">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
                 
         <!-- Favicon -->
@@ -24,7 +25,8 @@
 
         <!-- scripts -->
         <script type="text/javascript" src="{{ asset('js/jquery.min.js', 'theme') }}"></script>
-        <script src="{{ asset('js/bootstrap.min.js', 'theme') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/simpleLightbox.min.js', 'theme') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/bootstrap.min.js', 'theme') }}"></script>
         
         <script type="text/javascript" src="{{ asset('js/script.js', 'theme') }}"></script>
         <script src="https://unpkg.com/ionicons@4.2.2/dist/ionicons.js"></script>
@@ -59,6 +61,7 @@
                 labelClose: "Sluiten",
                 labelBack: "Terug"
             });
+            $('.imageGallery1 a').simpleLightbox();
         });
     </script>
 </html>

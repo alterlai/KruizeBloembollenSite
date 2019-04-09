@@ -16,6 +16,17 @@ main:
       path: assortiment
     - label: Teelt
       path: teelt
+      submenu:
+        - label: Planten
+          path: planten
+        - label: Selectie
+          path: selectie
+        - label: Koppen en beregenen
+          path: koppen-en-beregenen
+        - label: Rooien
+          path: rooien
+        - label: Pellen en verwerken
+          path: pellen-en-verwerken
     - label: Broei
       path: broei
     - label: Export

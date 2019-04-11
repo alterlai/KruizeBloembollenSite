@@ -78,7 +78,7 @@ pages:
 
 assortiment:
     name: Assortiment
-    singular_name: Bol
+    singular_name: Assortiment
     fields:
         title:
             type: text

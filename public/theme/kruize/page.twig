@@ -29,10 +29,10 @@
 
 			{% if record.gallery != "" %}
 				<div class="gallery">
-					<div class="gallery_title">
+					<div class="gallery-title">
 						<h2>Gallerij</h2>
 					</div>
-					<div class="gallery_images">
+					<div class="gallery-images">
 						<div class="imageGallery1">
 							{% for image in record.gallery %}
 							    <a href="{{asset(image.filename, "files") }}">

@@ -29,15 +29,14 @@
 
 			{% if record.gallery != "" %}
 				<div class="gallery">
-					<div class="gallery-title">
-						<h2>Gallerij</h2>
-					</div>
 					<div class="gallery-images">
 						<div class="imageGallery1">
 							{% for image in record.gallery %}
-							    <a href="{{asset(image.filename, "files") }}">
-							    	<img src="{{ image|thumbnail(200,200)}}" alt="Gallery image 1" />
-							    </a>
+								<div>
+								    <a href="{{asset(image.filename, "files") }}">
+								    	<img src="{{ image|thumbnail(240,240)}}" alt="Gallery image 1" />
+								    </a>
+								</div>
 							{% endfor %}
 						</div>
 					</div>

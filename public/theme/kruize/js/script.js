@@ -24,6 +24,8 @@ $(document).ready(function(){
     }, 500);
   });
 
+
+// Slider
   var $item = $('.carousel-item'); 
   var $wHeight = $(window).height()/3*2;
   $item.eq(0).addClass('active');
@@ -49,6 +51,19 @@ $(document).ready(function(){
     interval: 60000,
     pause: "false"
   });
+
+
+  // Pages Image gallery.
+  $(".imageGallery1 > div:gt(0)").hide();
+
+  setInterval(function() { 
+    $('.imageGallery1 > div:first')
+      .fadeOut(1000)
+      .next()
+      .fadeIn(1000)
+      .end()
+      .appendTo('.imageGallery1');
+    },  4000);
 
 
 });

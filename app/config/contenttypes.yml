@@ -16,6 +16,9 @@ homepage:
             label: Hoofdafbeelding
             type: image
             placeholder: https://source.unsplash.com/1920x640/?cityscape,landscape,nature/__random__
+        bannertext:
+          label: Banner text
+          type: text
         content:
             type: html
             height: 300px

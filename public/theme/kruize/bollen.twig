@@ -15,13 +15,15 @@
                     {% if record.image!="" %}
                         <div class="img-wrapper">
                             <a href="{{ record.link }}">
-                                <img src="{{ thumbnail(record.image, 300, 400) }}">
+                                <img src="{{ thumbnail(record.image, 250, 300) }}">
                             </a>
                         </div>
                     {% endif %}
+                    <a href="{{ record.link }}">
                     <div class="item-content">
-                        <h2><a href="{{ record.link }}">{{ record.title }}</a></h2>
+                        <h2>{{ record.title }}</h2>
                     </div>
+                    </a>
                 </div>
 
             {% else %}

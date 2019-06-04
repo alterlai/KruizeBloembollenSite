@@ -33,5 +33,16 @@ main:
       path: export
     - label: Acties
       path: acties
+      submenu:
+        - label: Tulpen
+          path: tulpen
+        - label: Droogverkoop
+          path: droogverkoop
+        - label: Bollenmanden
+          path: bollenmanden
+        - label: Bolchrysanten
+          path: bolchrysanten
+        - label: Overige acties
+          path: overige-acties
     - label: Contact
       path: contact

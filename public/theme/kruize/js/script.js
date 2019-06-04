@@ -55,15 +55,14 @@ $(document).ready(function(){
 
   // Pages Image gallery.
   $(".imageGallery1 > div:gt(0)").hide();
-
-  setInterval(function() { 
-    $('.imageGallery1 > div:first')
-      .fadeOut(1000)
-      .next()
-      .fadeIn(1000)
-      .end()
-      .appendTo('.imageGallery1');
-    },  4000);
-
-
+  if ($(".imageGallery1 > div").length > 1) {
+    setInterval(function() { 
+      $('.imageGallery1 > div:first')
+        .fadeOut(1000)
+        .next()
+        .fadeIn(1000)
+        .end()
+        .appendTo('.imageGallery1');
+      },  4000);
+  }
 });

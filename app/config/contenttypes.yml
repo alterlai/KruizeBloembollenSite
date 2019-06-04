@@ -54,6 +54,7 @@ pages:
             type: slug
             uses: title
         image:
+            label: Banner afbeelding
             type: image
         body:
             type: html
@@ -65,6 +66,7 @@ pages:
             type: imagelist
             label: Gallerij       
     taxonomy: [ groups ]
+    default_status: published
     recordsperpage: 20
 
 

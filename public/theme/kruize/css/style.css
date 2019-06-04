@@ -1,13 +1,14 @@
 /** mooie black: background: #232323; */
 /* latin-ext */
 @import url('https://fonts.googleapis.com/css?family=Lato|Roboto');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
 
 
  html {
  	height: 100%;
  }
 
-* { font-family: 'Roboto', sans-serif; }
+* { font-family: 'Open Sans', sans-serif; }
  body {
  	height: 100%;
  	background: #fff;
@@ -181,6 +182,17 @@ totop {
 /*******************
  ****** General ******
  *******************/
+.content > h1 {
+	color: #2e3192;
+	font-weight: bold;
+	font-size: 2rem;
+	margin-bottom: 20px;
+}
+
+.title {
+	font-weight: bold;
+}
+
 .featuredVideo{ 
 	overflow: hidden; 
 	max-height: 700px;
@@ -197,7 +209,7 @@ totop {
  .featuredVideo h1 {
  	color: white;
  	font-size: 3rem;
- 	font-family: "Georgia", "open-sans";
+ 	font-family: "Tahoma", "open-sans";
 	font-style: italic;
 	margin-left: 15%;
  }
@@ -295,13 +307,28 @@ totop {
 }
 
 .item {
-	width: 300px;
-	min-width: 300px;
+	width: 250px;
+	min-width: 250px;
 	box-shadow: 1px 5px 15px #CCC;
 	padding: 0;
-	margin: 30px;
+	margin: 15px;
 	overflow: hidden;
 	text-align: center;
+	border-radius: 5px;
+}
+
+.item:hover .item-content { 
+	background: #272727;
+	color: #fafafa;	
+	transition: 0.2 all;
+	-webkit-transition: 0.1s all;
+	transition-timing-function: ease-in;	
+}
+.item:hover img {
+	opacity: 0.8;
+	transition-timing-function: ease-in;
+	transition: 0.1s all;
+	-webkit-transition: 0.1s all;
 }
 
 .item img {
@@ -311,14 +338,31 @@ totop {
 }
 
 .item-content {
-	padding: 5px;
+	padding: 40px 5px;
+	background: #fafafa;
 }
 
-.item-content h2 a, .item-content h2 a:active { 
+.item > a , 
+.item > a:active { 
 	text-decoration: none;
-	font-size: 25px;
-	color: #2e3192; 
+	font-size: 20px;
+	color: #272727; 
 	font-weight: bold;
+}
+
+.item > a:focus, 
+.item > a:active { 
+	outline: none !important; 
+	box-shadow: none; 
+}
+
+.item .img-wrapper {
+	background: #272727;
+}
+
+.item-content h2 { 
+	font-weight: bold;
+	font-size: 1.5rem; 
 }
 
 
@@ -597,7 +641,7 @@ footer .footer_box a {
 		-o-transition: 200ms ease;
 		transition: 200ms ease;
 		opacity: 0;
-		transform: translateX(-80px);
+		transform: translate(-10px, +10px);
 		border: 1px solid rgb(89, 89, 89);
 	}
 	.mobile-nav ul li ul li { display: block; }
